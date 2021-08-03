@@ -45,7 +45,7 @@ class App extends Component {
     if(allNames === null){Swal.fire({
       icon: 'warning',
       title: 'Oops...',
-      text: 'Please remember to upload file with names first'
+      text: 'Please remember to upload file with words first'
       })
     }
 
@@ -54,13 +54,13 @@ class App extends Component {
     if(areNamesInside === false){Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'The names are not inside this sentence'
+      text: 'The sentence is not containing the words'
       })
     }
     if(areNamesInside === true){Swal.fire({
       icon: 'success',
       title: 'Yay!',
-      text: 'The names are inside this sentence'
+      text: 'The sentence contain the words'
       })
   }
 }
@@ -90,8 +90,8 @@ class App extends Component {
               {/* <img src={logo} className="App-logo" alt="logo" /> */}
               <p>Welcome to Sentence Parser!</p>
               <p>
-                Here we can compare the names in a file 
-                with four sentences of our choise
+                Here we can compare a list of words in a file 
+                with sentences of our choise
               </p>
             <form>
              <div>
@@ -117,7 +117,7 @@ class App extends Component {
              </div>
              <br></br>
              </form>
-                Please write four sentences to be compared below
+                Please write the sentences to be compared and click Submit to see the results!
               {
               this.state.sentencesArray.map((val, i) =>              
               <div key={i}>
@@ -125,10 +125,7 @@ class App extends Component {
               <TextField label={"Sentence number "+(i+1)+" here.."} variant='filled' input='color:white' color='default' type="text" onChange={(e) => { this.handleChange(i, e) }} value={val} />
               <Button style={{left: "10px", top: "10px"}} type="submit" variant='contained' color='default' endIcon={<KeyboardArrowRightIcon/>} onClick ={(e) => { this.regExpOperationChange(i, e) }}>Submit</Button>  
               </div>)
-              }
-              <p>
-                Click Submit and see the results!
-              </p>          
+              }     
             </header>
           </div>       
       );

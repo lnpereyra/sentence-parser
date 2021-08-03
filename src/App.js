@@ -90,8 +90,8 @@ class App extends Component {
               {/* <img src={logo} className="App-logo" alt="logo" /> */}
               <p>Welcome to Sentence Parser!</p>
               <p>
-                Here we can compare a list of words in a file 
-                with sentences of our choise
+                Here you can upload a list of words in a file 
+                and check if the sentences of your choice are containing the words
               </p>
             <form>
              <div>
